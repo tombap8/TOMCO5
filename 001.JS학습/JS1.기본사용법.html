@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS1. 기본사용법 - DOM</title>
   <style>
     /* 제목 */
-    h1{
+    h1 {
       text-align: center;
     }
+
     /* 드라마소개박스 */
-    .myo{
+    .myo {
       position: absolute;
       top: 0;
       left: 0;
@@ -24,10 +26,9 @@
       line-height: 150px;
       /* font: 스두크/줄체; */
       font: bold 30px/150px Verdana;
-      cursor: pointer;/* 손가락모양 */
+      cursor: pointer;
+      /* 손가락모양 */
     }
-
-
   </style>
   <script>
     // JS 인터널 코딩 구역
@@ -65,19 +66,48 @@
       - 브라우저 콘솔모드에 내용이 찍힘
       (F12 Console탭 선택)
 
+      [ JS코드의 특징 ]
+      -> JS 명령어 실행코드는 만나는 즉시
+      실행된다. 바로실행하지 않으려면 함수가
+      필요하다!
+
+      [ 함수 기본 ]
+      - 정의: 코드를 저장하는 메모리 공간
+      - 사용법:
+        function(전달변수){코드}
+      - 함수의 호출:
+        함수명() -> 전달값은 소괄호안에 보냄
+
 
     ************************************/
-        document.write('<h1>나는 프론트엔드 개발자다!</h1>');
 
+    // 출력1
+    // document.write('<h1>나는 프론트엔드 개발자다!</h1>');
+    // 출력2
+    // alert("그러냐?");
+    // 출력3
+    // console.log('축하드려요~!');
 
+    /********************************* 
+        함수명: 나야나
+        기능: P태그 변경하기
+    *********************************/
+   function 나야나(){
+
+      // 1. 호출확인
+      console.log('함수야!');
+
+   } /////////// 나야나 함수 ///////////
   </script>
 </head>
+
 <body>
   <h1>JS 기본사용법</h1>
-  <p class="myo">
+  <p class="myo" onclick="나야나()">
     나는 매일생각한다<br>
     도대체 <span id="name"></span>
   </p>
-  
+
 </body>
+
 </html>

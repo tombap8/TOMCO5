@@ -1,11 +1,9 @@
-[ 프론트엔드 웹개발 3회차 - 기본전달사항 ]
+[ 웹디자인(자바스크립트,제이쿼리)훈련과정 - 기본전달사항 ]
 탐쌤이멜: tombap@naver.com
 
-1. 교재: NCS 2권, 개발서 3권
+1. 교재: 
 
-2. 시험: 과목별 평가(각 과목이 끝나는날)
--> 교재가 없는 "프로그래밍 응용" - NCS
--> 5개 과목마다 시험(필기/실기) - NCS만 필기가 있음
+2. 시험: 
 
 3. 공식교과서: w3c 스쿨
 https://www.w3schools.com/
@@ -15,7 +13,7 @@ https://www.w3schools.com/
 5. 강의 동영상 백업 유튜브: 탐쌤코딩 시즌4
 https://www.youtube.com/channel/UC9O8vsECtjWmO29ApaCQjrQ
 
-6. 소스 깃허브 : 탐쌤코딩 시즌4
+6. 소스 깃허브 : 탐쌤코딩 시즌5
 https://github.com/tombap8/TOMCO4
 
 7. 사이트 벤치마킹 포털
@@ -55,12 +53,5 @@ https://youtu.be/EKFM5yeXdck
 
 -> 소통이 이루지는 장소에서 사용되는 
 수단과 방법을 인터페이스라고함!
-
-11. PDF 파일 무료 편집 툴 : 온라인 시험용
-ezPDF
-http://www.ezpdf.co.kr/main/downPage/downPage.jsp
-
-
-
 
 

@@ -10,7 +10,7 @@ https://www.w3schools.com/
 
 4. 소스 빌드용 폴더 생성하기!
 
-5. 강의 동영상 백업 유튜브: 탐쌤코딩 시즌4
+5. 강의 동영상 백업 유튜브: 탐쌤코딩 시즌5
 https://www.youtube.com/channel/UC_HdraoKX2Lk4Kmq6-WhfNQ
 
 6. 소스 깃허브 : 탐쌤코딩 시즌5

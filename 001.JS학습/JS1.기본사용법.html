@@ -28,6 +28,8 @@
       font: bold 30px/150px Verdana;
       cursor: pointer;
       /* 손가락모양 */
+
+      /* background: url(./images/kimbs.jpg) no-repeat top/cover; */
     }
   </style>
   <script>
@@ -327,6 +329,9 @@
       // css를 변경하려면 style을 부른다!
       // 대상: .myo
 
+      // 변수는 재활용을 목적으로 특정데이터나
+      // 요소등을 저장하는 저장공간이다!
+
       var 목표 =
       document // 전체문서
       .getElementsByClassName('myo') // 클래스요소
@@ -340,6 +345,21 @@
 
       // 3-3. 트랜지션
       목표.style.transition = "2s";
+
+      // 3-4. 가로크기
+      목표.style.width = "550px";
+
+      // 3-5. 세로크기
+      목표.style.height = "400px";
+
+      // 3-6. 라인하이트
+      목표.style.lineHeight = "200px";
+
+      // 3-7. 글자그림자
+      목표.style.textShadow = "2px 2px 2px #000";
+
+      // 3-8. 배경이미지
+      목표.style.background = "url(./images/kimbs.jpg) no-repeat top/cover";
 
 
 

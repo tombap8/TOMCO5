@@ -361,7 +361,43 @@
       // 3-8. 배경이미지
       목표.style.background = "url(./images/kimbs.jpg) no-repeat top/cover";
 
+      // 3-9.회전
+      목표.style.transform = 
+      "translate(-50%,-50%) rotate(360deg)";
+      
+      // 3-10. 위치이동
+      목표.style.top = "50%";
+      목표.style.left = "50%";
 
+      // 대상선정: h1
+      var 타이틀 =
+      document.getElementsByTagName("h1")[0];
+
+      // 글자변경하기
+      // innerText = 변경할글자
+      타이틀.innerText = "JS의 세계에 오신것을 환영합니다!"
+
+      // 글자크기변경
+      타이틀.style.fontSize = "50px";
+
+      // 트랜지션
+      타이틀.style.transition = 
+      "3s ease-in-out 2s";
+      // 속성 시간 이징 지연시간
+      // 3초작동 2초기다림
+
+      // 글자색
+      타이틀.style.color = "red";
+
+      // body배경색 변경하기
+      var 바디 =
+      document.body;
+      
+      바디.style.backgroundColor = 'pink';
+      바디.style.transition = '5s 5s';
+
+
+      
 
    } /////////// 나야나 함수 ///////////
   </script>
@@ -369,7 +405,7 @@
 
 <body>
   <h1>JS 기본사용법</h1>
-  <p class="myo" onclick="나야나()">
+  <p class="myo" onclick="나야나()" ondblclick="document.getElementsByClassName('myo').items(0).backgroundImage='url(https://img.marieclairekorea.com/2022/07/mck_62be7911656b5.jpg)'" title="더블클릭시 우영우를 볼 수 있습니다!~~~!!!">
     나는 매일생각한다<br>
     도대체 <span id="name"></span>
   </p>

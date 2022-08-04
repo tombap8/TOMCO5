@@ -323,13 +323,25 @@
       .getElementById('name') // 아이디요소
       .innerHTML = '<img src="./images/kim.png" alt="김비서가 왜그럴까?">';
 
-      // 스타일 변경하기 
+      // 3. 스타일 변경하기 
       // css를 변경하려면 style을 부른다!
       // 대상: .myo
+
+      var 목표 =
       document // 전체문서
       .getElementsByClassName('myo') // 클래스요소
-      .item(0) // 첫번째요소
-      .style.fontSize = "50px";
+      .item(0); // 첫번째요소
+
+      // 3-1. 글자크기변경
+      목표.style.fontSize = "50px";
+
+      // 3-2. 글자색변경
+      목표.style.color = "lime";
+
+      // 3-3. 트랜지션
+      목표.style.transition = "2s";
+
+
 
    } /////////// 나야나 함수 ///////////
   </script>

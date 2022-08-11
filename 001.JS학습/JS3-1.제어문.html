@@ -32,25 +32,39 @@
             /// 3. 점수환산하기 /////
             // 메시지 변수
             var msg;
+            // 글자색 변수
+            var fc;
 
             if(score >= 90){
                 msg = "매우잘함";
+                fc = "blue";
             }
             else if(score >= 80){
                 msg = "잘함";
+                fc = "green";
             }
             else if(score >= 70){
                 msg = "보통";
+                fc = "purple";
             }
             else if(score >= 60){
                 msg = "노력요함";
+                fc = "orange";
             }
             else{
                 msg = "재시험";
+                fc = "red";
             }
 
             // 할당된 변수값 확인
-            console.log("msg:",msg);
+            console.log("msg:",msg,"/fc:",fc);
+
+            // 4. 출력하기 //////
+            jexp.innerText = "평가결과는 " + msg;
+            // innerText 는 선택요소에 글자출력
+
+            // 5. 글자색 바꾸기
+            jexp.style.color = fc;
 
 
             // if문을 모두 따로 쓸 경우

@@ -24,12 +24,25 @@
             var score = jumsu.value;
             // value는 텍스트입력창의 값을 읽어오는 속성
             console.log("입력값:",score);
-
+            
             // 2-3. 출력대상: #jexp
             var jexp = document.querySelector("#jexp");
 
             // 2-4. 칭찬스티커: #jshow
             var jshow = document.querySelector("#jshow");
+
+            /////////////////////////////////
+            /// 2.5-1. 숫자여부 판별하기 /////
+            ////////////////////////////////
+            // 숫자판별 내장함수 사용 -> isNaN(값)
+            // is Not a Number? 숫자가 아니니?
+            // 결과: 숫자가 아니면 true / 숫자면 false
+            console.log("숫자가 아니니? ",isNaN(score));
+
+            if(isNaN(score)){ // 숫자가 아니면 들어감!
+                // 1. 메시지 출력하기
+                jexp.innerText = "숫자만 입력해 주세요!";
+            } /////////// if ////////////////
 
             ///////////////////////
             /// 3. 점수환산하기 /////

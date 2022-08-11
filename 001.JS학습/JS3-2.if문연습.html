@@ -66,6 +66,9 @@
             btns[2].onclick = function(){chgImg(this);};
             btns[3].onclick = function(){chgImg(this);};
 
+            // 클릭된 버튼 요소 자신을 보내는 키워드 -> this
+            // this는 '나자신'을 뜻함!
+
         }); //////////// load구역 ////////////////
 
 
@@ -76,8 +79,12 @@
         **************************************/
        function chgImg(U){ // U - 전달변수(버튼자신)
 
+            // 0. 버튼자신을 보낸 U에서 텍스트읽기
+            var btxt = U.innerText;
+            // innerText는 내부 글자 읽을때도 사용함!
+
             // 1. 함수호출확인
-            console.log('나야나!');
+            console.log('나야나!',btxt);
 
        } /////////// chgImg 함수 ///////////////
        /////////////////////////////////////////

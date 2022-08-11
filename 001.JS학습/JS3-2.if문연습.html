@@ -52,10 +52,35 @@
             4. 변경 내용: 이미지 src속성 변경
         ***********************************************/
 
+        // 클릭 이벤트 셋팅하기
+        // 윈도우객체 안의 모든 컨텐츠가 'load'이벤트가
+        // 발생한 후 함수내부를 실행함!
+        // 아래쪽 html요소들은 로딩후 실행구역에서 코딩함!!
+        window.addEventListener('load',function(){
+
+            // 버튼요소
+            var btns = document.querySelectorAll('.btns');
+            // 첫번째 버튼 링크 걸기
+            btns[0].onclick = function(){chgImg(this);};
+            btns[1].onclick = function(){chgImg(this);};
+            btns[2].onclick = function(){chgImg(this);};
+            btns[3].onclick = function(){chgImg(this);};
+
+        }); //////////// load구역 ////////////////
+
+
+
         /************************************** 
             함수명: chgImg
             기능: 이미지 src변경하기
         **************************************/
+       function chgImg(U){ // U - 전달변수(버튼자신)
+
+            // 1. 함수호출확인
+            console.log('나야나!');
+
+       } /////////// chgImg 함수 ///////////////
+       /////////////////////////////////////////
         
     </script>
 </head>

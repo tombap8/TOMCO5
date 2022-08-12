@@ -66,13 +66,13 @@
             // 함수내에서 전역변수 korea값 변경
             korea = "코리아";
 
-            // console.log("함수바깥 korea를 함수내에서:",korea);
+            console.log("함수바깥 korea를 함수내에서:",korea);
 
             // 전역변수 uk와 같은 이름의 지역변수를 선언하고 할당하면?
             var uk = "유케이";
             // -> 전역변수인 uk는 더이상 사용할 수 없다!ㅠ.ㅠ
 
-            // console.log("함수바깥 uk를 함수내에서:",uk);
+            console.log("함수바깥 uk를 함수내에서:",uk);
             
         } ////// callMe함수 /////////
 
@@ -81,38 +81,38 @@
         var uk = "영국";
 
         // 바깥에서 korea - 함수호출전
-        // console.log("바깥에서 korea 함수호출전:",korea);
+        console.log("바깥에서 korea 함수호출전:",korea);
 
         // 함수호출
-        // callMe();
+        callMe();
 
         // 바깥에서 korea - 함수호출후
-        // console.log("바깥에서 korea 함수호출후:",korea);
+        console.log("바깥에서 korea 함수호출후:",korea);
 
         // 바깥에서 uk - 함수호출후
-        // console.log("바깥에서 uk 함수호출후:",uk);
+        console.log("바깥에서 uk 함수호출후:",uk);
 
         // 함수내 지역변수 usa 찍어보기 -> 에러남!
-        // // console.log("함수내 usa 바깥에서 찍기:",usa);
+        // console.log("함수내 usa 바깥에서 찍기:",usa);
         // Uncaught ReferenceError: usa is not defined
         // 함수 내의 지역변수는 전역에서 참조할 수 없다!
 
         // if문 중괄호 var ////////////////////
         if(true){
             var who = "누구?";
-            // console.log("if문안 who:",who);
+            console.log("if문안 who:",who);
         } ///// if /////////
         
-        // console.log("if문밖 who:",who);
+        console.log("if문밖 who:",who);
         // if문 중괄호안에서 변수를 선언하면
         // 전역변수와 같다!
 
         // for문 중괄호 var ///////
         for(var i = 3; i > 0; i--){
-            // console.log("for문안 i:",i);
+            console.log("for문안 i:",i);
         } /////// for문 //////////
         
-        // console.log("for문밖 i:",i);
+        console.log("for문밖 i:",i);
         // for문 중괄호안에서 변수를 선언하면
         // 전역변수와 같다!
 
@@ -133,11 +133,11 @@
         {
 
             // 블록내부에서 전역변수 찍기! 앞
-            // console.log("블록내부에서 전역변수 찍기! 앞");
-            // console.log("seoul:",seoul);
-            // // console.log("jeju:",jeju); 에러남!
-            // // console.log("toktok:",toktok); 에러남!
-            // console.log("sport:",sport);
+            console.log("블록내부에서 전역변수 찍기! 앞");
+            console.log("seoul:",seoul);
+            // console.log("jeju:",jeju); //에러남!
+            // console.log("toktok:",toktok); //에러남!
+            console.log("sport:",sport);
 
             // 블록에서 변수 재선언하기! //////
             var seoul = "강남구";
@@ -168,31 +168,31 @@
             // 반드시 선언하고 사용할 것!
 
             // 블록내부에서 전역변수 찍기! 뒤
-            // console.log("블록내부에서 전역변수 찍기! 뒤");
-            // console.log("seoul:",seoul);
-            // console.log("jeju:",jeju); // 마라도
-            // console.log("toktok:",toktok); // 라인
-            // console.log("sport:",sport);
-            // console.log("myitem:",myitem);
+            console.log("블록내부에서 전역변수 찍기! 뒤");
+            console.log("seoul:",seoul);
+            console.log("jeju:",jeju); // 마라도
+            console.log("toktok:",toktok); // 라인
+            console.log("sport:",sport);
+            console.log("myitem:",myitem);
 
 
         }
         /* **************************************** */
 
         // 전역에서 전역변수 찍기!
-        // console.log("전역에서 전역변수 찍기!");
-        // console.log("seoul:",seoul);
-        // console.log("jeju:",jeju); // 제주도
-        // console.log("toktok:",toktok); // 카톡
-        // console.log("sport:",sport);        
-        // console.log("myitem:",myitem);
+        console.log("전역에서 전역변수 찍기!");
+        console.log("seoul:",seoul);
+        console.log("jeju:",jeju); // 제주도
+        console.log("toktok:",toktok); // 카톡
+        console.log("sport:",sport);        
+        console.log("myitem:",myitem);
 
 
         ////////////////////////////////////////////////
 
         // 변수 호이스팅(hoisting)
         cat = "고양이"; // 변수할당먼저
-        // console.log("cat:",cat);
+        console.log("cat:",cat);
         var cat; // 변수의 선언을 나중에!
         // 변수의 선언을 할당 후에 할 수 있는 것을
         // 변수 호이스팅 이라고 함!(var인 경우 사용됨!)
@@ -201,18 +201,22 @@
         // let을 사용하면 변수 호이스팅이 금지된다!
         let dog; // 위에서 선언해야함!
         dog = "강아지";
-        // console.log("dog:",dog);
+        console.log("dog:",dog);
         // let dog;
         // 아래와 같은 에러메시지 나옴.
         // Uncaught ReferenceError: Cannot access 'dog' before initialization
 
         ///////////// 상수 테스트 ///////////////////
-        // const fish; -> 선언을 따로하면 에러남!
+        // const fish; // -> 선언을 따로하면 에러남!
         const fish = "고등어";
-        // console.log("상수 fish:",fish);
+        console.log("상수 fish:",fish);
 
         // fish = "참치";
         // 상수는 재할당 불가!!!
+
+        // 상수는 선언과 동시에 할당해야하므로
+        // 배열,객체,함수 와 같은 중요형식들을
+        // 할당하여 쓸때 많이 사용된다!!!
 
     </script>
 </head>

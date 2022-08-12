@@ -60,19 +60,16 @@
 
             // 버튼요소
             var btns = document.querySelectorAll('.btns');
-            // 첫번째 버튼 링크 걸기
-            btns[0].onclick = function () {
-                chgImg(this);
-            };
-            btns[1].onclick = function () {
-                chgImg(this);
-            };
-            btns[2].onclick = function () {
-                chgImg(this);
-            };
-            btns[3].onclick = function () {
-                chgImg(this);
-            };
+            console.log('버튼개수:', btns.length);
+
+            // for문으로 모든버튼의 링크를 셋팅한다!
+            for (let i = 0; i < btns.length; i++) {
+
+                btns[i].onclick = function () {
+                    chgImg(this);
+                }; ///////// click ////////////
+
+            } /////////// for문 //////////////////
 
             // 클릭된 버튼 요소 자신을 보내는 키워드 -> this
             // this는 '나자신'을 뜻함!

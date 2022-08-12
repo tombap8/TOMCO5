@@ -279,10 +279,10 @@
 
             // 4. 메시지 만들기
             // msg 변수에 최종 출력내용을 다시 담아서 변경함
-            if(msg === "esc") {
+            if (msg === "esc") {
                 msg = "등록되지 않은 지역입니다!";
             } //////// if //////////
-            else{
+            else {
                 msg = `${txt}의 지역번호는 ${msg}입니다!`;
             } //////// else ////////
 
@@ -335,7 +335,35 @@
                       변경될때 발생하는 이벤트
                       -> onchange 이벤트속성을 사용함!
           *************************************************/
+        function gugu(U) { // U - 전달변수(select자신)
 
+            // 0. 전달된 선택값 읽기
+            let opt = U.value;
+
+            // 1. 함수호출확인
+            console.log('구구단을 외자!', opt);
+
+            // 2. 대상선정 : 출력대상 .g1
+            let gugu = document.querySelector('.g1');
+
+            // 3. 구구단 만들기
+            // 구구단 코드담을 변수
+            let code = `<h2>${opt}단</h2>`;
+
+            for (let i = 1; i < 10; i++) {
+
+                code += `${opt} × ${i} ＝ ${opt*i} <br>`;
+                // += 대입연산자(기존값에 계속 더함)
+
+            } ////////// for ////////////
+
+
+            // console.log("코드:",code);
+
+            // 4. 화면출력
+            gugu.innerHTML = code;
+
+        } //////////////// gugu함수 ///////////////////
 
         /*************************************************** 
                [ for문 ]
@@ -502,7 +530,8 @@
     <!-- for문 연습 -->
     <h2>for문 연습</h2>
     <h3>구구단 출력하기</h3>
-    <select name="sel" id="sel">
+    <select name="sel" id="sel" onchange="gugu(this)">
+        <!-- this는 select박스 자신을 보내는 것! -->
         <option value="1">구구단을 선택하세요!</option>
         <option value="2">2단</option>
         <option value="3">3단</option>

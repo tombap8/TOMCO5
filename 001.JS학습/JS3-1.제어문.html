@@ -395,13 +395,53 @@
 
         /************************************************* 
               함수명: gugu2
-              기능: 선택박스에서 선택된 구구단을 출력함(for문사용!)
+              기능: 선택박스에서 선택된 구구단을 출력함(while문사용!)
               연결이벤트: change
                       -> 선택박스(select)의 option선택이
                       변경될때 발생하는 이벤트
                       -> onchange 이벤트속성을 사용함!
           *************************************************/
+        function gugu2(U) { // U - 전달변수(select자신)
 
+            // 0. 전달된 선택값 읽기
+            let opt = U.value;
+
+            // 1. 함수호출확인
+            console.log('구구단을 외자!', opt);
+
+            // 2. 대상선정 : 출력대상 .g2
+            let gugu = document.querySelector('.g2');
+
+            // 3. 구구단 만들기
+            // 구구단 코드담을 변수
+            let code = `<h2>${opt}단</h2>`;
+
+            // while문 사용!!! //////////////
+            // 시작값
+            let i = 1;
+
+            while(i < 10){ // () 소괄호안이 한계값!
+
+                code += `${opt} × ${i} ＝ ${opt*i} <br>`;
+
+                //증감!(안쓰면 무한루프!)
+                i++;
+            } /////////// while문 //////////////
+
+            // for (let i = 1; i < 10; i++) {
+
+            //     code += `${opt} × ${i} ＝ ${opt*i} <br>`;
+            //     // += 대입연산자(기존값에 계속 더함)
+
+            // } ////////// for ////////////
+
+
+            // console.log("코드:",code);
+
+            // 4. 화면출력
+            gugu.innerHTML = code;
+
+        } /////////////////// gugu2함수 //////////////
 
         /**************************************************** 
               [ while문 ]
@@ -561,7 +601,7 @@
     <!-- while문 연습 -->
     <h2>while문 연습</h2>
     <h3>구구단 출력하기</h3>
-    <select name="sel2" id="sel2">
+    <select name="sel2" id="sel2" onchange="gugu2(this)">
         <option value="1">구구단을 선택하세요!</option>
         <option value="2">2단</option>
         <option value="3">3단</option>

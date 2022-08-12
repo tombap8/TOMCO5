@@ -11,7 +11,7 @@
                 함수명: jumsu
                 기능: 점수에 따른 평가출력하기
         *********************************************/
-        function jumsu(){
+        function jumsu() {
 
             // 1. 호출확인
             // console.log("점수가 뭐야?");
@@ -23,8 +23,8 @@
             // 2-2. 입력된 값 읽어오기
             var score = jumsu.value;
             // value는 텍스트입력창의 값을 읽어오는 속성
-            console.log("입력값:",score);
-            
+            console.log("입력값:", score);
+
             // 2-3. 출력대상: #jexp
             var jexp = document.querySelector("#jexp");
 
@@ -33,7 +33,7 @@
 
             /// 숫자여부 판별 및 숫자범위판별의
             // 공통 코드 함수로 만들기!
-            var comFn = function(){
+            var comFn = function () {
 
                 // 2. 글자색 초기화
                 jexp.style.color = "#000";
@@ -59,9 +59,9 @@
             // 숫자판별 내장함수 사용 -> isNaN(값)
             // is Not a Number? 숫자가 아니니?
             // 결과: 숫자가 아니면 true / 숫자면 false
-            console.log("숫자가 아니니? ",isNaN(score));
+            console.log("숫자가 아니니? ", isNaN(score));
 
-            if(isNaN(score)){ // 숫자가 아니면 들어감!
+            if (isNaN(score)) { // 숫자가 아니면 들어감!
                 // 1. 메시지 출력하기
                 jexp.innerText = "숫자만 입력해 주세요!";
                 console.log("여기들어옴!");
@@ -81,8 +81,8 @@
             /// 2.5-2. 숫자범위 판별하기 /////
             ////////////////////////////////
             // 입력값의 범위 아닌것은 0미만 100초과
-            else if(score < 0 || score > 100){
-                
+            else if (score < 0 || score > 100) {
+
                 // 1. 메시지 찍기
                 jexp.innerText = '0이상 100이하의 숫자만 입력하세요!';
 
@@ -103,34 +103,30 @@
             // 배경위치 변수
             var bgp;
 
-            if(score >= 90){
+            if (score >= 90) {
                 msg = "매우잘함";
                 fc = "blue";
                 bgp = "0 0";
-            }
-            else if(score >= 80){
+            } else if (score >= 80) {
                 msg = "잘함";
                 fc = "green";
                 bgp = "-322px 0";
-            }
-            else if(score >= 70){
+            } else if (score >= 70) {
                 msg = "보통";
                 fc = "purple";
                 bgp = "-322px -322px";
-            }
-            else if(score >= 60){
+            } else if (score >= 60) {
                 msg = "노력요함";
                 fc = "orange";
                 bgp = "0 -644px";
-            }
-            else{
+            } else {
                 msg = "재시험";
                 fc = "red";
                 bgp = "-644px -644px";
             }
 
             // 할당된 변수값 확인
-            console.log("msg:",msg,"/fc:",fc,"/bgp:",bgp);
+            console.log("msg:", msg, "/fc:", fc, "/bgp:", bgp);
 
             // 4. 출력하기 //////
             jexp.innerText = "평가결과는 " + msg;
@@ -146,7 +142,7 @@
             // if문을 모두 따로 쓸 경우
             // 범위지정을 모두 해야함!
             // if(score < 90 && score >= 80){}
-            
+
 
 
         } ///////////// jumsu 함수 /////////////////
@@ -204,7 +200,7 @@
             함수명: local
             기능: 지역명을 입력하면 지역국번을 안내한다!
         *************************************************/
-       function local(){
+        function local() {
 
             // 1. 호출확인
             console.log("국번안내");
@@ -214,10 +210,76 @@
 
             // 2-2. 입력된 값 읽어오기
             let txt = tg.value;
-            console.log('지역명:',txt);
+            console.log('지역명:', txt);
 
-       } ////////////////// local 함수 ////////////////////
-        
+            // 2-3. 대상선정: 출력대상 - #info
+            let info = document.querySelector("#info");
+
+            // 메시지 변수
+            let msg; // 선언만하고 할당은 switch문에서함!
+
+            // 3. 지역명에 따라 분류하여 메시지 넣기
+            switch (txt) {
+                case "서울":
+                    msg = "02";
+                    break;
+                case "경기":
+                    msg = "031";
+                    break;
+                case "인천":
+                    msg = "032";
+                    break;
+                case "부산":
+                    msg = "051";
+                    break;
+                case "대구":
+                    msg = "053";
+                    break;
+                case "광주":
+                    msg = "062";
+                    break;
+                case "전북":
+                    msg = "063";
+                    break;
+                case "전남":
+                    msg = "061";
+                    break;
+                case "경북":
+                    msg = "054";
+                    break;
+                case "경남":
+                    msg = "055";
+                    break;
+                case "세종":
+                    msg = "044";
+                    break;
+                case "울산":
+                    msg = "052";
+                    break;
+                case "대전":
+                    msg = "042";
+                    break;
+                case "충북":
+                    msg = "043";
+                    break;
+                case "충남":
+                    msg = "041";
+                    break;
+                case "제주":
+                    msg = "064";
+                    break;
+                case "나성":
+                    msg = "나성에 가면 편지를 전해줘요~";
+                    break;
+                default:
+                    msg = "esc";
+            } /////////// switch case문 ///////////
+
+            console.log("메시지", msg);
+
+
+        } ////////////////// local 함수 ////////////////////
+
 
         /************************************************ 
            [ switch case 문 ]
@@ -260,7 +322,7 @@
                       변경될때 발생하는 이벤트
                       -> onchange 이벤트속성을 사용함!
           *************************************************/
-        
+
 
         /*************************************************** 
                [ for문 ]
@@ -298,7 +360,7 @@
                       변경될때 발생하는 이벤트
                       -> onchange 이벤트속성을 사용함!
           *************************************************/
-        
+
 
         /**************************************************** 
               [ while문 ]
@@ -378,7 +440,8 @@
     <h2>if문 연습</h2>
     <h3 id="jexp">평가출력</h3>
     <label for="jumsu">점수입력:</label>
-    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3" onkeypress="if(event.keyCode === 13) jumsu()" />
+    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3"
+        onkeypress="if(event.keyCode === 13) jumsu()" />
     <button class="sbtn" onclick="jumsu()">평가하기</button>
     <!-- 
         onkeypress 이벤트 속성 
@@ -417,7 +480,8 @@
     <h2>switch case문 연습</h2>
     <h3 id="info">국번안내</h3>
     <label for="local">지역명 입력:</label>
-    <input type="text" id="local" placeholder="지역명을 '도'를 빼고 쓰세요!" maxlength="10" onkeypress="if(event.keyCode === 13) local()">
+    <input type="text" id="local" placeholder="지역명을 '도'를 빼고 쓰세요!" maxlength="10"
+        onkeypress="if(event.keyCode === 13) local()">
     <button class="sbtn" onclick="local()">국번문의</button>
 
     <br /><br />

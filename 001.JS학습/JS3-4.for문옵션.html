@@ -32,11 +32,15 @@
             // 컬렉션변수.length는 요소의 갯수를 리턴함!
             // console.log(tg);
 
+            // 내용초기화
+            tg[num].innerHTML = "";
+
             // 3. 출력하기
             // 기본: 1부터 10까지의 이미지를 for문으로 출력
             // for(시;한;증){}
+            // tg[num] ->  해당순번에 출력함!
             for(let i=1; i<=10; i++){
-                tg[0].innerHTML += 
+                tg[num].innerHTML += 
                 `<img src="images/num/num_0${i}.png" alt="숫자이미지">`;
             } /////////// for ///////////////
 

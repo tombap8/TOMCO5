@@ -23,6 +23,23 @@
             // 1. 호출 및 전달값 확인
             console.log("나야나!",num);
 
+            // 2. 대상선정: .forCls -> 3개있음
+            let tg = document.querySelectorAll('.forCls');
+            // tg변수에는 .forCls라는 요소들이 담겨있다!
+            // 컬렉션 집합 메모리 공간에 있고 이것은
+            // 순서대로 불러서 사용할 수 있다!
+            // 컬렉션변수.item(순번) 또는 컬렉션변수[순번]
+            // 컬렉션변수.length는 요소의 갯수를 리턴함!
+            // console.log(tg);
+
+            // 3. 출력하기
+            // 기본: 1부터 10까지의 이미지를 for문으로 출력
+            // for(시;한;증){}
+            for(let i=0; i<tg.length; i++){
+                tg[0].innerHTML += 
+                `<img src="images/num/num_01.png" alt="">`;
+            } /////////// for ///////////////
+
             
 
         } ///////////// addNum 함수 /////////////////

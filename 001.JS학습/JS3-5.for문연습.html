@@ -48,7 +48,12 @@
             // 3. 이미지 태그넣기
             // innerHTML = 태그
             // += 대입연산자(기존값에 더하기)
-            bcase.innerHTML += '<img src="./images/Minions.png" alt="미니언즈">';
+            // for(시;한;증){}
+            for(let i=0; i<5; i++){
+                
+                bcase.innerHTML += '<img src="./images/Minions.png" alt="미니언즈">';
+
+            } //////////// for ///////////
 
             
 
@@ -65,7 +70,7 @@
     <img src="./images/Minions.png" alt="미니언즈" class="mini" title="나를 클릭하면 열개씩 가방에 들어갈꼬얌~!" onclick="insMini(10)">
 
     <!-- 리셋을 한다면 이렇게...! -->
-    <button>리셋</button>
+    <button onclick="document.querySelector('.Bcase').innerHTML=''">리셋</button>
     
     <!-- 파란상자 -->
     <div class="Bcase"></div>

@@ -143,16 +143,16 @@
 
             // 대상선정
             // (1) 이벤트 대상: .sel
-            const sel = document.querySelector(".sel");
+            
 
             // (2) 변경 대상: GNB메뉴 -> #gnb a
-            const menu = document.querySelectorAll("#gnb a");
+           
 
             // (3) 변경 대상: 메인 이미지 -> #cont img
-            const mimg = document.querySelector("#cont img");
+           
 
             // (4) 변경 대상: 하단 회사정보 -> #info address
-            const info = document.querySelector("#info address");
+            
 
 
             ////////////////////////////////////////////////
@@ -161,37 +161,7 @@
             // 이벤트 종류: change
             // 변경대상: 메뉴, 메인이미지, 하단정보
             /////////////////////////////////////////////////
-            sel.addEventListener("change", () => {
-
-                // 1. 이벤트 발생시 변경된 option값 읽기
-                // 화살표함수 this는 event.currentTarget
-                let opt = event.currentTarget.value;
-                console.log("선택값:", opt);
-
-                // 2. 다국어 언어 객체값 셋팅
-                // 다국어 셋팅 객체인 lang의 속성명이 
-                // option 값과 같다!!!
-                let ov = lang[opt];
-                console.log("셋팅값:", ov);
-
-                // 3. 메뉴변경하기
-                // 대상: menu 변수
-                // forEach((요소/배열값,순번,객체)=>{})
-                menu.forEach(
-                    (ele, idx) =>
-                    ele.innerText = ov["메뉴"][idx]);
-
-                // 4. 메인이미지 변경하기
-                // 대상: mimg 변수
-                // setAttribute(속성명,값) -> 속성변경 JS내장함수
-                mimg.setAttribute("src",`images/${opt}.jpg`);
-
-                // 5. 하단주소 변경하기
-                // 대상: info 변수
-                info.innerText = ov["주소"];
-
-
-            }); //////////// change ////////////////
+            
 
 
 

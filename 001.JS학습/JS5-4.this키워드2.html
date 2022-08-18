@@ -12,9 +12,9 @@
             showHealth: function () {
                 setTimeout(function () {
                     console.log(this.name + "님, 오늘은 " + this.codeLine + "줄 코딩하셨네요!");
-                }, 500);
+                }, 2000);
                 // 타이밍함수의 익명함수안의 this는
-                // 싸고 있는 함수의 this와 실행 시차로
+                // 싸고 있는 함수의 객체의 this와 실행 시차로
                 // 의미가 달라져서 객체의 속성을
                 // 읽어올 수 없다!
             }
@@ -28,10 +28,10 @@
             showHealth: function () {
                 setTimeout(function () {
                     console.log(this.name + "님, 오늘은 " + this.codeLine + "줄 코딩하셨네요!");
-                }.bind(this), 500);
+                }.bind(this), 3000);
                 // bind(this)는 타이밍함수의 시차로 인해
                 // this의 의미가 달라시는 것을 방지해줌!
-                // 즉, 원래함수의 this를 묶어줌!
+                // 즉, 원래함수의 객체인 this를 묶어줌!
             }
         }
 
@@ -43,10 +43,10 @@
             showHealth: function () {
                 setTimeout(() => {
                     console.log(this.name + "님, 오늘은 " + this.codeLine + "줄 코딩하셨네요!");
-                }, 500);
+                }, 4000);
                 // 화살표함수를 타이밍함수안에 사용하면
                 // bind(this)를 사용하지 않아도
-                // 기존 싸고있는 this키워드의미로
+                // 기존 싸고있는 객체를 의미하는 this로
                 // 사용가능함!
                 // 이유는 화살표함수는 자신을 싼 객체를 
                 // 가리킴!

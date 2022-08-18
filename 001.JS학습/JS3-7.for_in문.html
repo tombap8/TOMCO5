@@ -90,10 +90,43 @@
             // 대상변수 할당하기
 
             // 이벤트 대상: .btns button
-            
+            const btns = document.querySelectorAll('.btns button');
+            // console.log('버튼들:',btns);
 
             // 대상변수 click 이벤트 설정하기
             // for of문 사용!
+            // for(let x of btns){
+            //     // x는 각각의 버튼요소
+            //     x.onclick = ()=>{};
+            // } ///////////// for of ///////////////
+
+            // forEach()를 쓴다면?
+            btns.forEach((ele)=>{ // ele는 요소자신
+
+                ele.onclick = ()=>{
+
+                    // 1. 버튼텍스트 읽어오기
+                    let btxt = ele.innerText;
+                    // console.log('버튼명:',btxt);
+
+                    // 2. 버튼 텍스트에 해당하는 객체할당하기
+                    let data = mvi[btxt]; // 객체명[속성명]
+                    // console.log('할당객체:',data);
+
+                    // 3. 해당요소에 데이터 넣어주기!
+                    // for in문 사용!
+                    // for(변수 in 객체){코드}
+                    for(let z in data){
+                        // z변수는 객체의 속성명이다!
+                        console.log('변수z:',z);
+                        // 속성값은 객체변수명[속성명] -> data[z]
+                        console.log('객체값:',data[z]);
+
+                    } ///////////// for in ////////////
+
+                }; ////// click ///////////
+
+            }); //////////// forEach /////////////
             
 
             /************************************************* 

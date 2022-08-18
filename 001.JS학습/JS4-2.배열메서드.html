@@ -204,7 +204,7 @@
 
                 // 선택대상: #sel 인 선택박스의 값
                 // 배열에 맨앞 값추가는 -> unshift() 
-                
+                fruit.unshift(sel.value);
                 // sel.value는 선택된 option값
                 // -> option에 value속성이 있으면 그값
                 // 없으면 데이터값을 가져간다!
@@ -225,7 +225,7 @@
                 console.log("뒷배열삭제!");
 
                 // 배열에 맨뒤 값삭제는 -> pop() 
-                
+                fruit.pop();
 
                 // 배열정보 화면출력하기
                 arrShow();
@@ -243,7 +243,7 @@
                 console.log("앞배열삭제!");
 
                 // 배열에 맨앞 값삭제는 -> shift() 
-                
+                fruit.shift();
 
                 // 배열정보 화면출력하기
                 arrShow();
@@ -298,6 +298,9 @@
 
                 // 중간배열 삭제하기 -> splice(순번,지울개수)
                 // splice(순번) -> 순번부터 뒤를 모두지움
+                // fruit.splice(2,1);
+                // fruit.splice(1);
+                fruit.splice(anum.value,delnum.value);
 
                 // 순번은 선택과일 : anum 변수
                 // 지울개수는 지울개수입력박스 : delnum 변수
@@ -329,7 +332,8 @@
 
                 // 순번은 선택과일 : anum 변수
                 // 추가할 과일은 #sel에서 선택한다!
-
+                // fruit.splice(2,0,"애플망고","파인애플");
+                fruit.splice(anum.value,0,sel.value);
                
 
                 // 배열정보 화면출력하기

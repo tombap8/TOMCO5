@@ -127,7 +127,7 @@
                 showTime();
 
                 // 시간함수 인터발호출하기!
-                
+                setInterval(showTime,1000);
                 // setInterval(함수,시간)
                 // 인터발함수의 함수는 함수만 호출할 경우 함수명만 써도됨!
                 // 시간은 1/1000초
@@ -225,7 +225,8 @@
                const insImg = () => {
 
                     // 1. 랜덤수 만들기 : 0~3 사이의 난수
-                    let rnum = 1;
+                    let rnum = Math.floor(Math.random()*4);
+                    // 1~4사이 난수를 만들고 내림처리하면 0~3
 
                     console.log("랜덤수:",rnum);
 
@@ -234,12 +235,16 @@
                     // while(조건){코드}
                     // 조건: 현재 발생한 랜덤수가 직전랜덤수와 같은가?
                     // 만약 true이면 다시발생!
-                    
+                    while(rnum === bnum){
+                        // 다시 랜덤수 만들기
+                        rnum = Math.floor(Math.random()*4);
+                        console.log('다시난수:',rnum);
+                    } ///////////// while ////////////
                     
 
                     /// >>>>> 중요 <<<<<< ////
                     // -> while문을 통과후 bnum에 rnum을 저장함!
-                    
+                    bnum = rnum;
                     // 다음번 비교를 위한 직전 랜덤수 저장!
 
                     // 3. 랜덤 이미지 넣기
@@ -250,9 +255,10 @@
                }; /////////// insImg 함수 ////////////
 
                // 랜덤 이미지 넣기 함수 최초호출!
-               
+               insImg();
 
                // 랜덤 이미지 넣기 함수 인터발호출!
+               setInterval(insImg, 1500);
                
 
 

@@ -143,16 +143,16 @@
 
             // 대상선정
             // (1) 이벤트 대상: .sel
+            const sel = document.querySelector('.sel');
             
-
             // (2) 변경 대상: GNB메뉴 -> #gnb a
+            const gnb = document.querySelectorAll('#gnb a');
            
-
             // (3) 변경 대상: 메인 이미지 -> #cont img
-           
+           const mimg = document.querySelector('.#cont img');
 
             // (4) 변경 대상: 하단 회사정보 -> #info address
-            
+            const addr = document.querySelector('#info address');
 
 
             ////////////////////////////////////////////////
@@ -161,6 +161,9 @@
             // 이벤트 종류: change
             // 변경대상: 메뉴, 메인이미지, 하단정보
             /////////////////////////////////////////////////
+            
+            sel.onchange = function(){};
+            sel.onchange = ()=>{};
             
 
 

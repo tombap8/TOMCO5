@@ -149,7 +149,7 @@
             const gnb = document.querySelectorAll('#gnb a');
            
             // (3) 변경 대상: 메인 이미지 -> #cont img
-           const mimg = document.querySelector('.#cont img');
+           const mimg = document.querySelector('#cont img');
 
             // (4) 변경 대상: 하단 회사정보 -> #info address
             const addr = document.querySelector('#info address');
@@ -162,8 +162,38 @@
             // 변경대상: 메뉴, 메인이미지, 하단정보
             /////////////////////////////////////////////////
             
-            sel.onchange = function(){};
-            sel.onchange = ()=>{};
+            //sel.onchange = function(){};
+            sel.onchange = ()=>{
+
+                // 1. 선택 옵션값 읽어오기
+                // 화살표함수 안의 this는 window를 가리킴
+                // 따라서 원래의 익명함수 function(){}를 쓰거나
+                // this대신 event.currentTarget를 사용할것!
+                // let opt = this.value;
+                let opt = event.currentTarget.value;
+                console.log('변경값:', opt);
+
+                // 2. 선택옵션값과 같은 lang객체 속성명의 데이터 읽어오기
+                let data = lang[opt];
+                console.log('데이터:',data);
+
+                // 3. '메뉴' 데이터에 따른 메뉴 셋팅
+                // 배열값이므로 forEach() 사용!
+                // 배열값 대상: data['메뉴']
+                console.log('메뉴:',data['메뉴']);
+
+                data['메뉴'].forEach((val,idx)=>{
+                    gnb[idx].innerText = val;
+                    // gnb[순번].innerText = 배열값;
+                }); ///////////// forEach //////////
+
+                // 4. 메인 이미지 변경
+                mimg.src = `images/${opt}.jpg`;
+
+                // 5. 주소변경
+                addr.innerText = data['주소'];
+
+            }; ////////// change 이벤트 함수 ///////
             
 
 

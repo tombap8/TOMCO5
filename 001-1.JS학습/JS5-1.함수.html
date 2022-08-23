@@ -342,6 +342,14 @@
         function Fn(){
             // 호출시 전달되는 arguments 찍어보기
             console.log('전달값arguments:',arguments);
+
+            // 배열 자동돌리기 for문은?
+            // for of문
+            for(let x of arguments){
+                document.body.innerHTML +=
+                '<h2>${x}</h2>';
+            } ////////// for of /////////
+
         } ///////////// Fn함수 ///////////////
 
 

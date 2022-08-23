@@ -339,6 +339,8 @@
         // 기본 전달값 배열변수가 있다! ->>> arguments
         // 주의: 화살표함수는 이것을 못씀!
         // 글자찍기 함수 //////
+        // const Fn = function(){
+        // const Fn = () => { // ->>> 못씀!!!
         function Fn(){
             // 호출시 전달되는 arguments 찍어보기
             console.log('전달값arguments:',arguments);
@@ -347,7 +349,7 @@
             // for of문
             for(let x of arguments){
                 document.body.innerHTML +=
-                '<h2>${x}</h2>';
+                `<h2>${x}</h2>`;
             } ////////// for of /////////
 
         } ///////////// Fn함수 ///////////////

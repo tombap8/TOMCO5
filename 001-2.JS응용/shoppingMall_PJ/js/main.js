@@ -87,12 +87,20 @@ function loadFn() {
         slide.insertBefore(lis[lis.length-1],lis[0]);
         // left값을 -100%로 변경하기
         slide.style.left = '-100%';
+        // 트랜지션 없애기
+        slide.style.transition = 'none';
 
         // 기능구현 2단계
-        // left값을 0으로변경
-        slide.style.left = '0';
-        // 트랜지션 설정
-        slide.style.transition = 'left .4s ease-in-out';
+        // 실행시간을 조금 차이를 준다!
+        // setTimeout() 사용!
+        setTimeout(() => {
+            // left값을 0으로변경
+            slide.style.left = '0';
+            // 트랜지션 설정
+            slide.style.transition = 
+            'left .4s ease-in-out';
+
+        },10); // 0.01초후에 실행함! ///
 
     }; //////////// click //////////
     

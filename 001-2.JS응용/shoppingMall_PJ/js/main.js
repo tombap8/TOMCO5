@@ -85,8 +85,12 @@ function loadFn() {
 
         },400); // 400은 0.4초
 
+        
+        // 블릿변경함수 호출(1전달!)
+        chgIndic(1);
 
-    }; //////////// click //////////
+
+    }; //////////// 오른쪽 버튼 click //////////
 
     // 3-2.왼쪽버튼
     abtn[0].onclick = ()=>{
@@ -126,7 +130,67 @@ function loadFn() {
 
         },10); // 0.01초후에 실행함! ///
 
-    }; //////////// click //////////
+        // 블릿변경함수 호출(0전달!)
+        chgIndic(0);
+
+    }; //////////// 왼쪽버튼 click //////////
+
+
+    // 블릿에서 슬라이드 순번을 읽을 수 있게
+    // 각 슬라이드li에 고유순번 속성넣기!
+    // 넣는이유: 슬라이드가 매번 순번이 바뀜!
+    // 넣는 방법은 처음로딩후 바로 li순번을 넣는다!
+    // forEach문 사용!!!
+    let sld = slide.querySelectorAll('li');
+    sld.forEach((ele,idx)=>{ // ele - 각요소, idx - 순번
+        ele.setAttribute('data-seq',idx);
+        // 속성명을 'data-'로 시작하면 내가만든 속성명을
+        // 사용할 수 있도록 w3c에서 지정함!
+        // setAttribute(속성명, 속성값) -> 속성셋팅메서드
+    }); //////// forEach ///////////
+
+    // 블릿요소 변수설정
+    let indic = document.querySelectorAll('.indic li');
+
+    ///// 블릿의 표시를 해당 슬라이드 순번과 같은
+    // 블릿에 class="on"을 주면 회색이미지로 보임!
+    // 나머지는 모두 on을 빼야함!
+    function chgIndic(num){ 
+        // num - 읽을 슬라이드 순번
+        // 오른쪽버튼은 1, 왼쪽버튼은 0을 전달!
+
+        // 1. 호출확인!
+        console.log('블릿:',num);
+
+        // 2. 슬라이드 속성 'data-seq'값 읽어오기
+        let seq = 
+        slide.querySelectorAll('li')[num]
+        .getAttribute('data-seq');
+        
+        // 값확인
+        console.log('data-seq:',seq);
+
+        // 3. 블릿 클래스 초기화!
+        indic.forEach((ele)=>{
+            ele.classList.remove('on');
+        }); ////// forEach ////////////
+
+        // 4. 슬라이드순번(data-seq)과 같은 순번의
+        // 블릿 li에 class="on"넣기
+        indic[seq].classList.add('on');
+
+        /* 
+            [ JS 클래스 컨트롤 메서드 ]
+            classList 객체
+            1) add(클래스명) - 클래스추가
+            2) remove(클래스명) - 클래스제거
+            3) toggle(클래스명) - 클래스추가/제거
+        */
+
+
+
+
+    } ///////////// chgIndic 함수 ////////
     
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////

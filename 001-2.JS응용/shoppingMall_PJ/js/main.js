@@ -76,7 +76,15 @@ function loadFn() {
 
     // 3-2.왼쪽버튼
     abtn[0].onclick = ()=>{
+        // 1. 호출확인
         console.log('왼쪽버튼!');
+        // 2. 대상선정: #slide -> slide변수
+        // 3. 기능구현
+        // 기능구현 1단계
+        // li요소
+        let lis = slide.querySelectorAll('li');
+        // 맨뒤요소 맨앞 이동 : insertBefore(넣을놈,넣을놈전놈)
+        slide.insertBefore(lis[lis.length-1],lis[0]);
     }; //////////// click //////////
     
 } //////////////// loadFn 함수 ///////////////

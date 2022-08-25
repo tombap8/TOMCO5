@@ -85,6 +85,9 @@ function loadFn() {
         let lis = slide.querySelectorAll('li');
         // 맨뒤요소 맨앞 이동 : insertBefore(넣을놈,넣을놈전놈)
         slide.insertBefore(lis[lis.length-1],lis[0]);
+        // left값을 -100%로 변경하기
+        slide.style.left = '-100%';
+        
     }; //////////// click //////////
     
 } //////////////// loadFn 함수 ///////////////

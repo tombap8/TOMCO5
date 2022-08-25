@@ -41,6 +41,43 @@ function loadFn() {
     // 1. 호출확인
     console.log("로딩완료!");
 
+    // 2. 대상선정
+    // 이벤트 대상: .abtn
+    let abtn = document.querySelectorAll('.abtn');
+    // 변경 대상: #slide
+    let slide = document.querySelector('#slide');
+
+    // 3. 클릭이벤트 기능구현
+
+    // 3-1.오른쪽버튼
+    abtn[1].onclick = ()=>{
+        // 1. 호출확인
+        console.log('오른쪽버튼!');
+        // 2. 대상선정: #slide -> slide변수
+        // 3. 기능구현: left값을 -100%로 변경
+        // 기능1단계 - 왼쪽으로 슬라이드 하나만큼 나가기!+트랜지션
+        slide.style.left = '-100%';
+        slide.style.transition = 'left .4s ease-in-out';
+        // 기능2단계 - 슬라이드 이동후 맨앞li 맨뒤이동
+        // 0.4초후 실행하려면? setTimeout(함수,시간)
+        setTimeout(()=>{
+            // 맨앞요소 맨뒤이동
+            slide.appendChild(
+                slide.querySelectorAll('li')[0]);
+            // 동시에 -100%인 slide의 left값을 0으로 변경!
+            slide.style.left = '0';
+            // left가 0이될때 트랜지션 지우기!
+            slide.style.transition = 'none';
+
+        },400); // 400은 0.4초
+
+
+    }; //////////// click //////////
+
+    // 3-2.왼쪽버튼
+    abtn[0].onclick = ()=>{
+        console.log('왼쪽버튼!');
+    }; //////////// click //////////
     
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////

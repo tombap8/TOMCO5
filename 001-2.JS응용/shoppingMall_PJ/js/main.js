@@ -87,7 +87,13 @@ function loadFn() {
         slide.insertBefore(lis[lis.length-1],lis[0]);
         // left값을 -100%로 변경하기
         slide.style.left = '-100%';
-        
+
+        // 기능구현 2단계
+        // left값을 0으로변경
+        slide.style.left = '0';
+        // 트랜지션 설정
+        slide.style.transition = 'left .4s ease-in-out';
+
     }; //////////// click //////////
     
 } //////////////// loadFn 함수 ///////////////

@@ -70,20 +70,20 @@ function loadFn() {
         // 1. 호출확인
         console.log('오른쪽버튼!');
         // 2. 대상선정: #slide -> slide변수
-        // 3. 기능구현: left값을 -100%로 변경
+        // 3. 기능구현: top값을 -100%로 변경
         // 기능1단계 - 왼쪽으로 슬라이드 하나만큼 나가기!+트랜지션
-        slide.style.left = '-100%';
+        slide.style.top = '-100%';
         slide.style.transition =
-            'left .4s ease-in-out';
+            'top .4s ease-in-out';
         // 기능2단계 - 슬라이드 이동후 맨앞li 맨뒤이동
         // 0.4초후 실행하려면? setTimeout(함수,시간)
         setTimeout(() => {
             // 맨앞요소 맨뒤이동
             slide.appendChild(
                 slide.querySelectorAll('li')[0]);
-            // 동시에 -100%인 slide의 left값을 0으로 변경!
-            slide.style.left = '0';
-            // left가 0이될때 트랜지션 지우기!
+            // 동시에 -100%인 slide의 top값을 0으로 변경!
+            slide.style.top = '0';
+            // top가 0이될때 트랜지션 지우기!
             slide.style.transition = 'none';
 
         }, 400); // 400은 0.4초
@@ -119,8 +119,8 @@ function loadFn() {
         let lis = slide.querySelectorAll('li');
         // 맨뒤요소 맨앞 이동 : insertBefore(넣을놈,넣을놈전놈)
         slide.insertBefore(lis[lis.length - 1], lis[0]);
-        // left값을 -100%로 변경하기
-        slide.style.left = '-100%';
+        // top값을 -100%로 변경하기
+        slide.style.top = '-100%';
         // 트랜지션 없애기
         slide.style.transition = 'none';
 
@@ -128,11 +128,11 @@ function loadFn() {
         // 실행시간을 조금 차이를 준다!
         // setTimeout() 사용!
         setTimeout(() => {
-            // left값을 0으로변경
-            slide.style.left = '0';
+            // top값을 0으로변경
+            slide.style.top = '0';
             // 트랜지션 설정
             slide.style.transition =
-                'left .4s ease-in-out';
+                'top .4s ease-in-out';
 
         }, 10); // 0.01초후에 실행함! ///
 
@@ -216,20 +216,20 @@ function loadFn() {
         autoI = setInterval(() => {
 
             // ********** 오른쪽이동 버튼과 동일한 코드!!! ********** //
-            // 3. 기능구현: left값을 -100%로 변경
+            // 3. 기능구현: top값을 -100%로 변경
             // 기능1단계 - 왼쪽으로 슬라이드 하나만큼 나가기!+트랜지션
-            slide.style.left = '-100%';
+            slide.style.top = '-100%';
             slide.style.transition =
-                'left .4s ease-in-out';
+                'top .4s ease-in-out';
             // 기능2단계 - 슬라이드 이동후 맨앞li 맨뒤이동
             // 0.4초후 실행하려면? setTimeout(함수,시간)
             setTimeout(() => {
                 // 맨앞요소 맨뒤이동
                 slide.appendChild(
                     slide.querySelectorAll('li')[0]);
-                // 동시에 -100%인 slide의 left값을 0으로 변경!
-                slide.style.left = '0';
-                // left가 0이될때 트랜지션 지우기!
+                // 동시에 -100%인 slide의 top값을 0으로 변경!
+                slide.style.top = '0';
+                // top가 0이될때 트랜지션 지우기!
                 slide.style.transition = 'none';
 
             }, 400); // 400은 0.4초

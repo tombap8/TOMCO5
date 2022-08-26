@@ -166,6 +166,7 @@ function loadFn() {
         let seq = 
         slide.querySelectorAll('li')[num]
         .getAttribute('data-seq');
+
         
         // 값확인
         console.log('data-seq:',seq);

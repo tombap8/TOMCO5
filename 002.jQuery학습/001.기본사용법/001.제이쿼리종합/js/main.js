@@ -52,7 +52,10 @@ let zom = '<img src="images/zom.png" alt="좀비들" class="mz"">';
 
   // 2. 좀비 + 주사기 넣기
   // 뒤에 코드넣기는 append() 메서드사용!
-  if(idx===2) $(ele).append('<img src="images/inj.png" alt="주사기" class="inj">');
+  if(idx===2) $(ele).append(inj);
+  else if(idx===9) $(ele).append(mz1);
+  else if(idx===7) $(ele).append(mz2);
+  else if(idx===1) $(ele).append(zom);
 
 
  }); //////// each /////////////

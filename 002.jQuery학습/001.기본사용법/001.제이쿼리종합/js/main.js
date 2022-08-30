@@ -406,7 +406,7 @@ $(() => { ///////// jQB /////////////////
       let callFn = () => { // 애니후 실행함수
         // 1. 메시지 변경
         msg.text('이제 곧 탈출이닷!')
-        fadeIn(200);
+        .fadeIn(200);
 
         // 2. 다음 버튼 보이기
         $(e.currentTarget).next().slideDown(400);
@@ -428,7 +428,7 @@ $(() => { ///////// jQB /////////////////
 
         // 1. 메시지 변경
         msg.text('어서 헬기를 타야지!')
-        fadeIn(200);
+        .fadeIn(200);
 
         // 2. 다음 버튼 보이기
         $(e.currentTarget).next().slideDown(400);

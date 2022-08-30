@@ -80,13 +80,27 @@ $(() => { ///////// jQB /////////////////
     // ele - 버튼자신
     // seq - 이동할 li순번
     // call - 각 버튼별 콜백함수
+
+    // 1. 클릭된 버튼 자신 없애기
     $(ele).slideUp(400)
 
+    // 2. 메시지 지우기
+    msg.fadeOut(200);
+    // fadeOut(시간,이징,함수)
+    // -> opacity가 0되며 애니메이션
+    // 애니메이션후에 display:none됨
+    // 반대는 fadeIn(시간,이징,함수)
 
-    // 미니언즈가 몇번방으로 이동하기
+
+    // 3. 미니언즈가 몇번방으로 이동하기
     // 몇번방 li위치 알아오기
     let posT = bd.eq(seq).offset().top;
     let posL = bd.eq(seq).offset().left;
+
+    // left값을 보정하여 미니언즈가 각 li방의 중앙에 오게함!
+    // left값 + li가로크기절반 - 미니언즈가로크기절반
+    posL = posL + bd.eq(seq).width()/2 - mi.width()/2;
+
     console.log('top:', posT, '\nleft:', posL);
     // eq(순번) 해당순번요소 선택
     // offset() 메서드 : 요소의 크기, 위치등 정보제공
@@ -121,8 +135,16 @@ $(() => { ///////// jQB /////////////////
       // 콜백함수 : 이동후 실행함수 //
       let callFn = () => { // 애니후 실행함수
 
-        // 다음 버튼 보이기
-        $(e.currentTarget).next().slideDown(400);
+        // 1. 메시지 변경
+        msg.text('와~! 아늑하다! 옆방으로 가보자!')
+        .fadeIn(200); // 메시지 나타나기
+
+        // 2. 다음 버튼 보이기
+        $(e.currentTarget).next()
+        .delay(500) // 0.5초 지연
+        .slideDown(400);
+        // delay(시간) -> 시간은 1/1000초
+        // -> 애니메이션 메서드 앞에 사용!!!
 
       }; //////// 콜백함수 끝 ////////////
 
@@ -279,7 +301,7 @@ $(() => { ///////// jQB /////////////////
       // 미니언즈 공통함수 호출!
       miniAct(e.currentTarget, 0, callFn);
       // miniAct(버튼자신,이동할li순번)
-      
+
     }) // 3-9. "" 버튼 클릭시 끝 /////
 
 

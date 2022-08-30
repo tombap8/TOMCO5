@@ -209,20 +209,20 @@ $(() => { ///////// jQB /////////////////
 
         // 1. 메시지 변경
         msg.text('여긴 없겠지?')
-        .fadeIn(200);
+          .fadeIn(200);
 
         // 2. 좀비보이기 : 7번방
         bd.eq(7).find('.mz')
-        // 0.5초후 0.5초간 애니 나타남
-        .delay(500).fadeIn(500, ()=>{
+          // 0.5초후 0.5초간 애니 나타남
+          .delay(500).fadeIn(500, () => {
 
-          // 3. 메시지 수정하기
-          msg.text('악! 여기도!!!');
+            // 3. 메시지 수정하기
+            msg.text('악! 여기도!!!');
 
-          // 4. 다음 버튼 보이기
-          $(e.currentTarget).next().slideDown(400);
+            // 4. 다음 버튼 보이기
+            $(e.currentTarget).next().slideDown(400);
 
-        }); ////// fadeIn ////////////
+          }); ////// fadeIn ////////////
 
       }; //////// 콜백함수 끝 ////////////
 
@@ -241,16 +241,16 @@ $(() => { ///////// jQB /////////////////
 
         // 1. 메시지 변경
         msg.text('여긴 없겠지?...')
-        .fadeIn(200) // 메시지 보이기
-        .delay(1000) // 1초후
-        .fadeIn(200,()=>{
-          // 2. 메시지 두번째 변경
-          msg.html('그래도 무서우니까<br>윗층으로 가자!');
+          .fadeIn(200) // 메시지 보이기
+          .delay(1000) // 1초후
+          .fadeIn(200, () => {
+            // 2. 메시지 두번째 변경
+            msg.html('그래도 무서우니까<br>윗층으로 가자!');
 
-          // 3. 다음 버튼 보이기
-          $(e.currentTarget).next().slideDown(400);
+            // 3. 다음 버튼 보이기
+            $(e.currentTarget).next().slideDown(400);
 
-        }); ////// fadeIn /////////
+          }); ////// fadeIn /////////
 
       }; //////// 콜백함수 끝 ////////////
 
@@ -270,24 +270,24 @@ $(() => { ///////// jQB /////////////////
 
         // 1. 메시지 변경
         msg.empty() // 선택요소 텍스트 지우기
-        .delay(500)
-        .fadeIn(200,()=>msg.text('무'))
-        .delay(500)
-        .fadeIn(200,()=>msg.text('무.'))
-        .delay(500)
-        .fadeIn(200,()=>msg.text('무.서'))
-        .delay(500)
-        .fadeIn(200,()=>msg.text('무.서.'))
-        .delay(500)
-        .fadeIn(200,()=>msg.text('무.서.워'))
-        .delay(500)
-        .fadeIn(200,()=>msg.text('무.서.워.'))
-        .delay(500)
-        .fadeIn(200,()=>msg.text('무.서.워..'))
-        .delay(500)
-        .fadeIn(200,()=>msg.text('무.서.워...'))
-        .delay(500)
-        .fadeIn(200,()=>{
+          .delay(500)
+          .fadeIn(200, () => msg.text('무'))
+          .delay(500)
+          .fadeIn(200, () => msg.text('무.'))
+          .delay(500)
+          .fadeIn(200, () => msg.text('무.서'))
+          .delay(500)
+          .fadeIn(200, () => msg.text('무.서.'))
+          .delay(500)
+          .fadeIn(200, () => msg.text('무.서.워'))
+          .delay(500)
+          .fadeIn(200, () => msg.text('무.서.워.'))
+          .delay(500)
+          .fadeIn(200, () => msg.text('무.서.워..'))
+          .delay(500)
+          .fadeIn(200, () => msg.text('무.서.워...'))
+          .delay(500)
+          .fadeIn(200, () => {
             // 2. 좀비 달려오기
             // -> 7번방 좀비: bd.eq(7).find('.mz')
             let tg = bd.eq(7);
@@ -295,42 +295,50 @@ $(() => { ///////// jQB /////////////////
             // 같은 대상에 연속해서 애니메이션을 줄경우
             // 큐(Queue)에 등록되어 순서대로 실행됨!
             tg.find('.mz')
-            .animate({ // 아래서 위로 올라오기
-              bottom: '100%'
-            }, 300,"easeOutBack")
-            .animate({ // 오른쪽에서 달려오기
-              right: '120%'
-            }, 1000,"easeOutBounce",
-            ()=>{ // 애니후 실행함수
-              // 3. 주인공 사색되기!(흑백처리)
-              mi.css({
-                filter: 'grayscale(100%)'
-              }); ///// css //////
+              .animate({ // 아래서 위로 올라오기
+                bottom: '100%'
+              }, 300, "easeOutBack")
+              .animate({ // 오른쪽에서 달려오기
+                  right: '120%'
+                }, 1000, "easeOutBounce",
+                () => { // 애니후 실행함수
+                  // 3. 주인공 사색되기!(흑백처리)
+                  mi.css({
+                    filter: 'grayscale(100%)'
+                  }); ///// css //////
 
-              // 4. 메시지 지우기
-              msg.hide();
+                  // 4. 메시지 지우기
+                  msg.hide();
 
-              // 5. 2초뒤에 좀비되기
-              setTimeout(() =>{
-                // 5-1. 좀비이미지 변경
-                mi.find('img')
-                .attr('src','images/mz1.png');
-                // attr(속성명, 속성값)
-                // -> 속성값 변경 메서드
-                // 비교)  JS의 setAttribute()
-                // 참고) 속성값 가져오기는
-                // -> attr(속성명)
-                // 비교) JS의 getAttribute()
+                  // 5. 2초뒤에 좀비되기
+                  setTimeout(() => {
+                    // 5-1. 좀비이미지 변경
+                    mi.find('img')
+                      .attr('src', 'images/mz1.png');
+                    // attr(속성명, 속성값)
+                    // -> 속성값 변경 메서드
+                    // 비교)  JS의 setAttribute()
+                    // 참고) 속성값 가져오기는
+                    // -> attr(속성명)
+                    // 비교) JS의 getAttribute()
 
-              },2000); //// 타임아웃 /////
+                    // 5-2. 좀비 메시지
+                    msg.html('나도좀비!;;;<br>어서 치료주사를!')
+                    css({
+                        left: "100%"
+                      }) // 위치변경
+                      .fadeIn(200); // 메시지 보이기
 
-            }) /////// animate ////////
+                      // 6. 다음 버튼 보이기
+                      $(e.currentTarget).next()
+                      .slideDown(400);
 
-        }) ////////// fadeIn ////////////
+                  }, 2000); //// 타임아웃 /////
 
+                }); /////// animate ////////
 
-        // 다음 버튼 보이기
-        $(e.currentTarget).next().slideDown(400);
+          }); ////////// fadeIn ////////////
+
 
       }; //////// 콜백함수 끝 ////////////
 

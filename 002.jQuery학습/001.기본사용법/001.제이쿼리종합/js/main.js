@@ -76,8 +76,10 @@ $(() => { ///////// jQB /////////////////
   /************************************* 
           미니언즈 공통기능함수
   *************************************/
-  const miniAct = (ele, seq) => {
-    //ele - 버튼자신,seq - 이동할 li순번
+  const miniAct = (ele, seq, call) => {
+    // ele - 버튼자신
+    // seq - 이동할 li순번
+    // call - 각 버튼별 콜백함수
     $(ele).slideUp(400)
 
 
@@ -92,13 +94,10 @@ $(() => { ///////// jQB /////////////////
     // offset().left -> 왼쪽끝에서 부터 left값
 
     mi.animate({
-        top: posT + "px",
-        left: posL + "px"
-      }, 1000, "easeInOutElastic",
-      () => { // 애니후 실행함수
-        // 다음 버튼 보이기
-        $(ele).next().slideDown(400);
-      }); //////// animate //////////
+      top: posT + "px",
+      left: posL + "px"
+    }, 1000, "easeInOutElastic", call);
+    //////// animate //////////
 
     /* 
       [ slideUp(시간,이징,함수) ]
@@ -119,13 +118,22 @@ $(() => { ///////// jQB /////////////////
   // 3-1. "들어가기" 버튼 클릭시 시작 //////
   btns.first().click((e) => { // e 이벤트 전달변수
 
+      // 콜백함수 : 이동후 실행함수 //
+      let callFn = () => { // 애니후 실행함수
+
+        // 다음 버튼 보이기
+        $(e.currentTarget).next().slideDown(400);
+
+      }; //////// 콜백함수 끝 ////////////
+
+
       // 클릭된 버튼 자신 사라지기
       // 원래는 this가 자기자신이지만
       // 화살표함수 내부에서는 event.currentTarget이다!
       // e는 클릭메서드 전달변수로 이벤트를 받는다!
 
       // 미니언즈 공통함수 호출!
-      miniAct(e.currentTarget, 8);
+      miniAct(e.currentTarget, 8, callFn);
       // miniAct(버튼자신,이동할li순번)
 
 
@@ -135,8 +143,16 @@ $(() => { ///////// jQB /////////////////
     // next() 선택요소의 다음 형제요소
     // 앞의 버튼 다음버튼임!
     .next().click((e) => {
+      // 콜백함수 : 이동후 실행함수 //
+      let callFn = () => { // 애니후 실행함수
+
+        // 다음 버튼 보이기
+        $(e.currentTarget).next().slideDown(400);
+
+      }; //////// 콜백함수 끝 ////////////
+
       // 미니언즈 공통함수 호출!
-      miniAct(e.currentTarget, 9);
+      miniAct(e.currentTarget, 9, callFn);
       // miniAct(버튼자신,이동할li순번)
     }) // 3-2. "옆방으로!" 버튼 클릭시 끝 /////
 
@@ -144,8 +160,17 @@ $(() => { ///////// jQB /////////////////
     // next() 선택요소의 다음 형제요소
     // 앞의 버튼 다음버튼임!
     .next().click((e) => {
+
+      // 콜백함수 : 이동후 실행함수 //
+      let callFn = () => { // 애니후 실행함수
+
+        // 다음 버튼 보이기
+        $(e.currentTarget).next().slideDown(400);
+
+      }; //////// 콜백함수 끝 ////////////
+
       // 미니언즈 공통함수 호출!
-      miniAct(e.currentTarget, 7);
+      miniAct(e.currentTarget, 7, callFn);
       // miniAct(버튼자신,이동할li순번)
     }) // 3-3. "" 버튼 클릭시 끝 /////
 
@@ -153,8 +178,16 @@ $(() => { ///////// jQB /////////////////
     // next() 선택요소의 다음 형제요소
     // 앞의 버튼 다음버튼임!
     .next().click((e) => {
+      // 콜백함수 : 이동후 실행함수 //
+      let callFn = () => { // 애니후 실행함수
+
+        // 다음 버튼 보이기
+        $(e.currentTarget).next().slideDown(400);
+
+      }; //////// 콜백함수 끝 ////////////
+
       // 미니언즈 공통함수 호출!
-      miniAct(e.currentTarget, 6);
+      miniAct(e.currentTarget, 6, callFn);
       // miniAct(버튼자신,이동할li순번)
     }) // 3-4. "" 버튼 클릭시 끝 /////
 
@@ -162,8 +195,17 @@ $(() => { ///////// jQB /////////////////
     // next() 선택요소의 다음 형제요소
     // 앞의 버튼 다음버튼임!
     .next().click((e) => {
+
+      // 콜백함수 : 이동후 실행함수 //
+      let callFn = () => { // 애니후 실행함수
+
+        // 다음 버튼 보이기
+        $(e.currentTarget).next().slideDown(400);
+
+      }; //////// 콜백함수 끝 ////////////
+
       // 미니언즈 공통함수 호출!
-      miniAct(e.currentTarget, 4);
+      miniAct(e.currentTarget, 4, callFn);
       // miniAct(버튼자신,이동할li순번)
     }) // 3-5. "" 버튼 클릭시 끝 /////
 
@@ -171,8 +213,17 @@ $(() => { ///////// jQB /////////////////
     // next() 선택요소의 다음 형제요소
     // 앞의 버튼 다음버튼임!
     .next().click((e) => {
+
+      // 콜백함수 : 이동후 실행함수 //
+      let callFn = () => { // 애니후 실행함수
+
+        // 다음 버튼 보이기
+        $(e.currentTarget).next().slideDown(400);
+
+      }; //////// 콜백함수 끝 ////////////
+
       // 미니언즈 공통함수 호출!
-      miniAct(e.currentTarget, 2);
+      miniAct(e.currentTarget, 2, callFn);
       // miniAct(버튼자신,이동할li순번)
     }) // 3-6. "" 버튼 클릭시 끝 /////
 
@@ -180,8 +231,17 @@ $(() => { ///////// jQB /////////////////
     // next() 선택요소의 다음 형제요소
     // 앞의 버튼 다음버튼임!
     .next().click((e) => {
+
+      // 콜백함수 : 이동후 실행함수 //
+      let callFn = () => { // 애니후 실행함수
+
+        // 다음 버튼 보이기
+        $(e.currentTarget).next().slideDown(400);
+
+      }; //////// 콜백함수 끝 ////////////
+
       // 미니언즈 공통함수 호출!
-      miniAct(e.currentTarget, 3);
+      miniAct(e.currentTarget, 3, callFn);
       // miniAct(버튼자신,이동할li순번)
     }) // 3-7. "" 버튼 클릭시 끝 /////
 
@@ -189,8 +249,17 @@ $(() => { ///////// jQB /////////////////
     // next() 선택요소의 다음 형제요소
     // 앞의 버튼 다음버튼임!
     .next().click((e) => {
+
+      // 콜백함수 : 이동후 실행함수 //
+      let callFn = () => { // 애니후 실행함수
+
+        // 다음 버튼 보이기
+        $(e.currentTarget).next().slideDown(400);
+
+      }; //////// 콜백함수 끝 ////////////
+
       // 미니언즈 공통함수 호출!
-      miniAct(e.currentTarget, 1);
+      miniAct(e.currentTarget, 1, callFn);
       // miniAct(버튼자신,이동할li순번)
     }) // 3-8. "" 버튼 클릭시 끝 /////
 
@@ -198,9 +267,19 @@ $(() => { ///////// jQB /////////////////
     // next() 선택요소의 다음 형제요소
     // 앞의 버튼 다음버튼임!
     .next().click((e) => {
+
+      // 콜백함수 : 이동후 실행함수 //
+      let callFn = () => { // 애니후 실행함수
+
+        // 다음 버튼 보이기
+        $(e.currentTarget).next().slideDown(400);
+
+      }; //////// 콜백함수 끝 ////////////
+
       // 미니언즈 공통함수 호출!
-      miniAct(e.currentTarget, 0);
+      miniAct(e.currentTarget, 0, callFn);
       // miniAct(버튼자신,이동할li순번)
+      
     }) // 3-9. "" 버튼 클릭시 끝 /////
 
 

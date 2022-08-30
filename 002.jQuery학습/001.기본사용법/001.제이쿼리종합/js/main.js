@@ -314,7 +314,7 @@ $(() => { ///////// jQB /////////////////
               setTimeout(() =>{
                 // 5-1. 좀비이미지 변경
                 mi.find('img')
-                .attr('src','')
+                .attr('src','images/mz1.png');
                 // attr(속성명, 속성값)
                 // -> 속성값 변경 메서드
                 // 비교)  JS의 setAttribute()

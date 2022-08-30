@@ -99,7 +99,7 @@ $(() => { ///////// jQB /////////////////
 
     // left값을 보정하여 미니언즈가 각 li방의 중앙에 오게함!
     // left값 + li가로크기절반 - 미니언즈가로크기절반
-    posL = posL + bd.eq(seq).width()/2 - mi.width()/2;
+    posL = posL + bd.eq(seq).width() / 2 - mi.width() / 2;
 
     console.log('top:', posT, '\nleft:', posL);
     // eq(순번) 해당순번요소 선택
@@ -137,12 +137,12 @@ $(() => { ///////// jQB /////////////////
 
         // 1. 메시지 변경
         msg.text('와~! 아늑하다! 옆방으로 가보자!')
-        .fadeIn(200); // 메시지 나타나기
+          .fadeIn(200); // 메시지 나타나기
 
         // 2. 다음 버튼 보이기
         $(e.currentTarget).next()
-        .delay(500) // 0.5초 지연
-        .slideDown(400);
+          .delay(500) // 0.5초 지연
+          .slideDown(400);
         // delay(시간) -> 시간은 1/1000초
         // -> 애니메이션 메서드 앞에 사용!!!
 
@@ -171,21 +171,23 @@ $(() => { ///////// jQB /////////////////
         // 1. 좀비등장
         // find(선택자) -> 자손요소찾기!
         // 비교) children(선택자) -> 직계자식찾기!
-        bd.eq(9).find('.mz')        
-        // 1초후 나타남!
-        .delay(1000).fadeIn(400,()=>{
-          
-          // 2. 메시지 변경하기
-          // html(코드) -> html코드 넣기(JS의 innerHTML)
-          msg
-          .html('악!;;;좀비!<br>어서피하자!')
-          .fadeIn(200) // 나타남
-          .css({left:"-90%"}) // 박스위치변경
+        bd.eq(9).find('.mz')
+          // 1초후 나타남!
+          .delay(1000).fadeIn(400, () => {
 
-          // 3. 다음 버튼 보이기
-          $(e.currentTarget).next().slideDown(400);
+            // 2. 메시지 변경하기
+            // html(코드) -> html코드 넣기(JS의 innerHTML)
+            msg
+              .html('악!;;;좀비!<br>어서피하자!')
+              .fadeIn(200) // 나타남
+              .css({
+                left: "-90%"
+              }) // 박스위치변경
 
-        }); //////// fadeIn //////////
+            // 3. 다음 버튼 보이기
+            $(e.currentTarget).next().slideDown(400);
+
+          }); //////// fadeIn //////////
 
 
       }; //////// 콜백함수 끝 ////////////

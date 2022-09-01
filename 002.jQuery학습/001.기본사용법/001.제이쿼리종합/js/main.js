@@ -510,12 +510,15 @@ $(() => { ///////// jQB /////////////////
               // parent() -> 부모로 올라감
               bd.parent().addClass('on');
 
+              // 비교) 부모로 올라가기 -> parentNode
+              //document.getElementById().parentNode
+
             },3000);//// 타임아웃 //////
 
 
-          })
+          }); ///// animate ////////
 
-        }) ////////// fadeIn ////////
+        }); ////////// fadeIn ////////
 
         // 다음 버튼 보이기
         $(e.currentTarget).next().slideDown(400);

@@ -18,8 +18,22 @@ $(()=>{////////// jQB /////////////////////
     ***********************************/
    // 스크롤 위치값 변수
    let scTop;
+
    // 스크롤 등장클래스 담기
    let scAct = $('.scAct');
+   // 스크롤 등장클래스의 각 위치를 담을 배열변수
+   const scpos = [];
+
+   // 스크롤 등장클래스 위치값 셋팅하기
+   scAct.each((idx,ele)=>{ // idx - 순번, ele - 요소
+    // 위치값을 scpos배열 변수에 넣기
+    scpos[idx] = $(ele).offset().top;
+
+   }); ///////// each //////////
+
+   // 위치배열값 확인!
+   scpos.forEach((val)=>console.log(val));
+
    // 상단영역 변수
    let topA = $('#top');
    // 탑버튼 변수
@@ -47,7 +61,7 @@ $(()=>{////////// jQB /////////////////////
       if(scTop >= 300) tbtn.addClass('on');
       else tbtn.removeClass('on');
 
-      // 스크롤등장 요소에 클래스 on넣기
+      // 3. 스크롤등장 요소에 클래스 on넣기
       if(scTop > 400){
         scAct.first().addClass('on');
       }

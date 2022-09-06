@@ -89,7 +89,12 @@ $(() => { ////////// jQB ///////////////////////
         } ///////// switch case ///////
 
         // 4. 페이지 이동하기
-        window.open().location.href = url;
+        if (atxt === "로그인" ||
+            atxt === "회원가입" ||
+            atxt === "갤러리")
+            location.href = url;
+        else // 기타 sns는 새창열기
+            window.open().location.href = url;
         // window.open() 새창열기
 
     }); /////////// click //////////////

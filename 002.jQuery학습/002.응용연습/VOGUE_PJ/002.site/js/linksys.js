@@ -10,10 +10,33 @@ $(() => { ////////// jQB ///////////////////////
     // 메서드: before(요소) -> 선택요소 앞에 형제요소 삽입
     // -> 참고) after(요소) -> 선택요소 뒤에 형제요소 삽입
     // 선택자 :last는 제이쿼리 전용임!
+    $('.sns a:last').before(`
+        <a class="fi fi-laptop">
+            <span class="ir">
+                로그인
+            </span>
+        </a>
+        <a class="fi fi-user-secret">
+            <span class="ir">
+                회원가입
+            </span>
+        </a>
+        <a class="fi fi-camera">
+            <span class="ir">
+                갤러리
+            </span>
+        </a>
+    `);
 
 
     ///// sns 파트 a요소들에 툴팁넣기 ////////
-
+    $('.sns a').each((idx, ele) => {
+        // attr(속성명,값)
+        // -> 값으로 자식요소의 .ir의 텍스트읽기
+        $(ele)
+            .attr('title',
+                $(ele).children('.ir').text().trim());
+    }); //////////////// each //////////////////
 
     // 선택메서드 비교
     // find(요소) - 자손선택
@@ -23,7 +46,7 @@ $(() => { ////////// jQB ///////////////////////
         SNS 메뉴 파트 링크 셋팅하기
     ************************************/
     // 대상: .sns a
-    $('.sns a').click(e=>{
+    $('.sns a').click(e => {
 
         // 클릭된 a자신(화살표함수는 this대신)
         let ele = e.currentTarget;
@@ -38,7 +61,7 @@ $(() => { ////////// jQB ///////////////////////
 
         // 3. 이동할 페이지 주소할당하기
         let url;
-        switch(atxt){
+        switch (atxt) {
             case "인스타그램":
                 url = "https://www.instagram.com/VOGUEKOREA/";
                 break;
@@ -54,6 +77,15 @@ $(() => { ////////// jQB ///////////////////////
             case "카카오스토리":
                 url = "https://story.kakao.com/ch/voguekr";
                 break;
+            case "로그인":
+                url = "login.html";
+                break;
+            case "회원가입":
+                url = "member.html";
+                break;
+            case "갤러리":
+                url = "gallery.html";
+                break;
         } ///////// switch case ///////
 
         // 4. 페이지 이동하기
@@ -66,9 +98,9 @@ $(() => { ////////// jQB ///////////////////////
     /************************************ 
             메인로고 링크 셋팅하기
     ************************************/
-    $('.logo a').click(()=>
+    $('.logo a').click(() =>
         location.href = 'index.html');
-     
+
     /************************************ 
         GNB 메뉴 파트 링크 셋팅하기
     ************************************/
@@ -92,8 +124,8 @@ $(() => { ////////// jQB ///////////////////////
         console.log(txt);
 
         // 2. 서브페이지 이동하기
-        if(txt !== 'search')
-            location.href = 
+        if (txt !== 'search')
+            location.href =
             'category.html?cat=' + encodeURIComponent(txt);
         // 카테고리를 구분하기 위한 파라미터 키=값 쌍을 보냄
         // cat=카테고리명

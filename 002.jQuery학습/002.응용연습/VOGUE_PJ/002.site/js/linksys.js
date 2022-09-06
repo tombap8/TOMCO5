@@ -36,6 +36,30 @@ $(() => { ////////// jQB ///////////////////////
         // trim() 앞뒤공백제거
         console.log(atxt);
 
+        // 3. 이동할 페이지 주소할당하기
+        let url;
+        switch(atxt){
+            case "인스타그램":
+                url = "https://www.instagram.com/VOGUEKOREA/";
+                break;
+            case "페이스북":
+                url = "https://www.facebook.com/VOGUEkr";
+                break;
+            case "트위터":
+                url = "https://twitter.com/VogueKorea";
+                break;
+            case "유튜브":
+                url = "https://www.youtube.com/user/VogueKorea?sub_confirmation=1";
+                break;
+            case "카카오스토리":
+                url = "https://story.kakao.com/ch/voguekr";
+                break;
+        } ///////// switch case ///////
+
+        // 4. 페이지 이동하기
+        window.open().location.href = url;
+        // window.open() 새창열기
+
     }); /////////// click //////////////
 
 
